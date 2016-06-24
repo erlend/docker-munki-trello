@@ -18,5 +18,5 @@ if [ -z $1 ]; then
     --makecatalogs /munki-tools/code/client/makecatalogs
 fi
 
-[ "$DEBUG" -eq 'true' ] && echo $@
+[ "$DEBUG" = 'true' ] && echo $@
 exec $@
