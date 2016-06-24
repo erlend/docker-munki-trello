@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z $1 ]; then
-  set -- python /munki-trello/munki-trello.py \
+  set -- /docker-cron "$DOCKER_CRON" python /munki-trello/munki-trello.py \
     --key $DOCKER_TRELLO_KEY \
     --token $DOCKER_TRELLO_TOKEN \
     --boardid $DOCKER_TRELLO_BOARDID \
@@ -18,4 +18,4 @@ if [ -z $1 ]; then
     --makecatalogs /munki-tools/code/client/makecatalogs
 fi
 
-exec /docker-cron $DOCKER_CRON "$@"
+exec $@
