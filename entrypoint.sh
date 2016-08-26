@@ -1,7 +1,9 @@
 #!/bin/sh
 
-if [ -z $1 ]; then
-  /docker-cron "$DOCKER_CRON" python /munki-trello/munki-trello.py \
+if [ `which $1` ]; then
+  exec $@
+else
+  exec /docker-cron python /munki-trello/munki-trello.py \
     --key $DOCKER_TRELLO_KEY \
     --token $DOCKER_TRELLO_TOKEN \
     --boardid $DOCKER_TRELLO_BOARDID \
@@ -16,6 +18,4 @@ if [ -z $1 ]; then
     --repo-path "$DOCKER_TRELLO_MUNKI_PATH" \
     --suffix "$DOCKER_TRELLO_SUFFIX" \
     --makecatalogs /munki-tools/code/client/makecatalogs
-else
-  exec $@
 fi
