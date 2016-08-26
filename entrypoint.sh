@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 if [ `which $1` ]; then
   exec $@
