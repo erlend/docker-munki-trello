@@ -12,7 +12,7 @@ ENV DOCKER_TRELLO_TO_DEV_LIST="To Development" \
     DC_SYNC="true"
 
 ADD https://github.com/MasteryConnect/docker-cron/releases/download/v1.3/docker-cron /
-COPY entrypoint.sh /
 RUN chmod 0755 /docker-cron
+COPY entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
