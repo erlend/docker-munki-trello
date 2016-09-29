@@ -9,6 +9,9 @@ ENV DOCKER_TRELLO_TO_DEV_LIST="To Development" \
     DOCKER_DEV_CATALOG="development" \
     DOCKER_TEST_CATALOG="testing" \
     DOCKER_PROD_CATALOG="production" \
+    DOCKER_TRELLO_TO_DEV_LIST="To Development" \
+    DOCKER_TRELLO_TO_TEST_LIST="To Testing" \
+    DOCKER_TRELLO_TO_PROD_LIST="To Production" \
     DC_SYNC="true"
 
 RUN apk add --no-cache curl py-pip && \
